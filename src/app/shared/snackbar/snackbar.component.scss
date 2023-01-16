@@ -1,0 +1,10 @@
+.notifier{
+  display: flex;
+  align-items: center;
+  &__message{
+    flex: 1 0 auto;
+  }
+  &__close{
+    cursor: pointer;
+  }
+}
