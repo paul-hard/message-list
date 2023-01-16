@@ -1,0 +1,21 @@
+.create-message-dialog {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  &-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}

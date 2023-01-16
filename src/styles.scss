@@ -1,0 +1,103 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$messages-app-primary: mat.define-palette(mat.$indigo-palette);
+$messages-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$messages-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$messages-app-theme: mat.define-light-theme((
+  color: (
+    primary: $messages-app-primary,
+    accent: $messages-app-accent,
+    warn: $messages-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($messages-app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+td {
+  word-break: break-all;
+}
+
+.cdk-column-name,
+.mat-column-name {
+  width: 10%;
+  min-width: 100px;
+}
+
+.cdk-column-id,
+.mat-column-id {
+  width: 20%;
+  min-width: 250px;
+}
+
+.cdk-column-message,
+.mat-column-message {
+  width: 30%;
+  min-width: 300px;
+}
+
+.cdk-column-data,
+.mat-column-data {
+  width: 25%;
+  min-width: 250px;
+}
+
+$accentSuccess: #B0CB1F;
+$accentError: #CE2C3F;
+$navTextColor: #fff;
+$navTextHover: rgb(208, 206, 206);
+
+.success-snackbar {
+  .mdc-snackbar__surface {
+    background-color: $accentSuccess !important;
+  }
+}
+
+.error-snackbar {
+  .mdc-snackbar__surface{
+    background-color: $accentError !important;
+  }
+}
+
+.mdc-dialog__title::before{
+  height: auto !important;
+}
+
+a {
+  text-decoration: none;
+  color: $navTextColor;
+  font-size: 18px;
+  font-weight: 500;
+  margin-inline: 10px;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+
+}

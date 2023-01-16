@@ -1,0 +1,20 @@
+<div class="create-message-dialog">
+  <div class="create-message-dialog-title">
+    Create new message
+  </div>
+  <div class="create-message-dialog-form" [formGroup]="messageForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="User">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <textarea matInput formControlName="message" placeholder="Please input your message..."></textarea>
+    </mat-form-field>
+  </div>
+  <div class="create-message-dialog-actions">
+    <button mat-raised-button (click)="closeDialog()">Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="!messageForm.valid" (click)="createNewMessage()">Create</button>
+  </div>
+</div>
